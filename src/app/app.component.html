@@ -1,0 +1,70 @@
+<div class="page-wrapper">
+  <div class="container">
+    <header>
+      <div class="row" style="margin:25px">
+        <div class="col-md-3">
+          <a routerLink="/">
+            <img src="assets/images/logo.png" alt="BestShop">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <app-search></app-search>
+        </div>
+        <div class="col-md-4">
+          <div style="float:right">
+            <app-cart-status></app-cart-status>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT-->
+    <div style="margin-left:60px;" *ngIf="router.url == '/products' || router.url.includes('/category') ">
+      <span>
+        Category:       <app-product-category-menu></app-product-category-menu>
+      </span>
+    </div>
+    <div *ngIf="router.url == '/products'">
+      <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide>
+          <div>
+            <a routerLink="/products/5">
+              <img [src]="images[0]" alt="first slide">
+            </a>
+          </div>
+          <div class="carousel-caption">
+            <h1>MacBook Sale</h1>
+            <h5 style="color:black">Flash sale: Get upto 500$ instant discount.</h5>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div>
+            <a routerLink="/products/30">
+              <img [src]="images[1]" alt="second slide">
+            </a>
+          </div>
+          <div class="carousel-caption">
+            <h1>iPhone Sale</h1>
+            <h5 style="color:black">Only today: Get upto 200$ rebate on iPhone XR.</h5>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div>
+            <a routerLink="/products/60">
+              <img [src]="images[2]" alt="third slide">
+            </a>
+          </div>
+          <div class="carousel-caption">
+            <h1>Apple Student Discounts</h1>
+            <h5 style="color:black">Get upto 10% discount on eligible apple products with valid edu email.</h5>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+
+  <footer>
+    <p>This site is developed by Naveen K Tammareddy for demonstration purposes.</p>
+  </footer>
+</div>

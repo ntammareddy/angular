@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let product of products" class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card text-center mt-4">
+          <a routerLink="/products/{{product.id}}">
+            <img src="{{ product.imageUrl }}" alt="Card image cap">
+          </a>
+          <div class="card-body">
+            <a routerLink="/products/{{product.id}}">
+              <h5 class="card-title">{{product.name}}</h5>
+            </a>
+            <p class="card-text" style="text-align:justify;font-size:small">{{product.description}}</p>
+            <p class="card-text" style="font-weight:bold">{{ product.unitPrice | currency: 'USD' }}</p>
+            <button class="btn btn-primary btn-sm" (click)="addToCart(product)">Add to cart</button>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+
+<div class="row">
+  <div class="col-lg-4 col-md-5">
+    <br /><br />
+    <img src="{{product?.imageUrl}}" class="rounded" />
+  </div>
+  <div class="col-lg-5 col-md-6" style="padding:35px;">
+    <h3>{{product?.name}}</h3>
+    <span class="fa fa-star checked" style="color:orange"></span>
+    <span class="fa fa-star checked" style="color:orange"></span>
+    <span class="fa fa-star checked" style="color:orange"></span>
+    <span class="fa fa-star checked" style="color:orange"></span>
+    <span class="fa fa-star"></span>
+    <span style="padding-left:10px; font-size:small"> 2539 ratings </span>
+    <div style="padding-top:15px;">
+      Price: <span class="price"> {{product?.unitPrice | currency: 'USD'}} </span>
+    </div>
+    <button class="btn btn-primary btn-sm" (click)="addToCart(product)">Add to cart</button>
+    <hr>
+    <h4>Description</h4>
+    <p>{{product?.description}}</p>
+    <a routerLink="/products" class="mt-5">Back to Product List</a>
+  </div>
+</div>

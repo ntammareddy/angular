@@ -1,0 +1,9 @@
+<div class="form-header">
+  <input #IdSearchText type="text" class="form-control"
+         (keyup.enter)="doSearch(IdSearchText.value)"
+         placeholder="Search for products...">
+
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" (click)="doSearch(IdSearchText.value)">Search</button>
+  </div>
+</div>
