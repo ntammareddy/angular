@@ -121,7 +121,7 @@ a {
 }
 
 .main-content {
-  padding-top: 116px;
+  padding-top: 40px;
   min-height: 100vh
 }
 
@@ -218,10 +218,6 @@ section {
   margin-left: -10px;
 }
 
-.main-content.page-m {
-  padding: 10% 15% !important
-}
-
 /* 
  * ----------------------------
  * Shopping Cart Details
@@ -260,6 +256,91 @@ table.table.table-bordered th {
   margin-bottom: 10px;
   outline: 0;
   margin-left: 5px
+}
+
+
+/* 
+ * ----------------------------
+ * Checkout
+ * ----------------------------
+ */
+
+.form-area {
+  background: #e5e5e5;
+  position: relative;
+  margin-bottom: 45px;
+  padding: 50px 20px;
+  border: 2px solid #ccc;
+  width: 50%;
+}
+
+  .form-area h3 {
+    position: absolute;
+    top: -26px;
+    left: 13px;
+    background: #e5e5e5;
+    padding: 10px 20px;
+    font-weight: 500;
+    z-index: 23;
+    display: inline-block
+  }
+
+.input-space {
+  margin-bottom: 20px
+}
+
+  .input-space label {
+    padding-left: 31px;
+    font-size: 14px;
+    margin-bottom: 50px
+  }
+
+  .input-space input[type=text] {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    outline: 0;
+    padding: 10px;
+    border: 1px solid #ccc
+  }
+
+  .input-space select {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    outline: 0;
+    padding: 0 10px;
+    border: 1px solid #ccc
+  }
+
+.au-checkbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+  .au-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer
+  }
+
+.au-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: #fff !important;
+  border: 2px solid #e5e5e5;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px
 }
 
 /* 
@@ -342,3 +423,17 @@ footer {
   }
 }
 
+/* 
+ * ----------------------------
+ * Animations
+ * ----------------------------
+ */
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

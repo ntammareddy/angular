@@ -6,11 +6,13 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
-  cartItems: CartItem[] = [];
+  cartItems: CartItem[];
   totalPrice: Subject<number> = new Subject<number>(); //Subject will send event(publish) to all the subscribers
   totalQuantity: Subject<number> = new Subject<number>();
 
-  constructor() { }
+  constructor() {
+    this.cartItems = [];
+  }
 
   addToCart(newCartItem: CartItem) {
     //check if we already have the item in cart
